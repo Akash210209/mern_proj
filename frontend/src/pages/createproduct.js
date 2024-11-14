@@ -27,7 +27,9 @@ const createproduct = () => {
 
     try {
       // Make a POST request to the backend to upload the product
-      const response = await fetch('http://localhost:5000/api/products', {
+      // `${window.location.origin}/api/products/${id}`
+      // const response = await fetch('http://localhost:5000/api/products', {
+        const response = await fetch( `${window.location.origin}/api/products`, {
         method: 'POST',
         body: formData, // Sending form data
       });

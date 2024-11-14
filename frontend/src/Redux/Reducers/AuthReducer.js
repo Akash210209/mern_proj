@@ -6,7 +6,9 @@ export const fetchProducts = createAsyncThunk(
   'auth/fetchProducts', // action type string
   async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products');
+      // const response = await axios.get('http://localhost:5000/api/products');
+      const response = await axios.get(`${window.location.origin}/api/products`);
+      // axios.delete(`${window.location.origin}/api/products/${id}`)
       return response.data.data; // Return the data to the payload
     } catch (error) {
       console.error("Error fetching products:", error);

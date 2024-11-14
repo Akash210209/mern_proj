@@ -21,7 +21,8 @@ const Homepage = () => {
   // Handle Delete action
   const handleDelete = (id) => {
     // Call API to delete product
-    axios.delete(`http://localhost:5000/api/products/${id}`)
+    // axios.delete(`http://localhost:5000/api/products/${id}`)
+    axios.delete(`${window.location.origin}/api/products/${id}`)
       .then(() => {
         console.log('Product deleted successfully');
         dispatch(fetchProducts()); // Re-fetch products after deletion
