@@ -20,13 +20,12 @@ if(process.env.NODE_ENV ==="production"){
 }
 
 // Enable CORS with the specific frontend URL
-// app.use(cors({
-//     origin: 'http://localhost:3000',  // Replace with your frontend URL
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Optionally restrict the allowed methods
-//     allowedHeaders: ['Content-Type', 'Authorization']  // Optionally restrict the allowed headers
-// }));
+app.use(cors({
+  origin: true,  // This allows all origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Optionally restrict the allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization']  // Optionally restrict the allowed headers
+}));
 
-app.use(cors());
 
 app.use(express.json());
 
