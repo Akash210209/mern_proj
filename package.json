@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": " cross-env NODE_ENV=development nodemon backend/server.js",
     "build": "npm install -ff && npm install --prefix frontend -ff && npm run build --prefix frontend ",
-    "start": "cross-env NODE_ENV=production  node backend/server.js"
+    "start": "node backend/server.js"
   },
   "type": "module",
   "keywords": [],
