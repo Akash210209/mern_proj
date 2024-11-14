@@ -6,16 +6,22 @@ export const fetchProducts = createAsyncThunk(
   'auth/fetchProducts', // action type string
   async () => {
     try {
-      // const response = await axios.get('http://localhost:5000/api/products');
+      // Make the API request
       const response = await axios.get(`${window.location.origin}/api/products`);
-      // axios.delete(`${window.location.origin}/api/products/${id}`)
-      return response.data.data; // Return the data to the payload
+      
+      // Log the response to check the data
+      console.log(response, "check_response");
+
+      // Return the data to the payload
+      return response.data.data; 
     } catch (error) {
+      // Log the error and throw it to reject the action
       console.error("Error fetching products:", error);
-      throw error; // Reject the action in case of an error
+      throw error; 
     }
   }
 );
+
 
 const AuthReducer = createSlice({
   name: "auth",

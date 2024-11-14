@@ -9,14 +9,14 @@ const Homepage = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.auth.products); // Get products from the Redux store
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      dispatch(fetchProducts()); // Dispatch fetchProducts after a 3-second delay
-    }, 3000);
+  // useEffect(() => {
+  //   const timeoutId = setTimeout(() => {
+  //     dispatch(fetchProducts()); // Dispatch fetchProducts after a 3-second delay
+  //   }, 3000);
 
-    // Cleanup timeout on component unmount
-    return () => clearTimeout(timeoutId);
-  }, [dispatch]);
+  //   // Cleanup timeout on component unmount
+  //   return () => clearTimeout(timeoutId);
+  // }, [dispatch]);
 
   // Handle Delete action
   const handleDelete = (id) => {
