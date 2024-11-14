@@ -26,7 +26,6 @@ if(process.env.NODE_ENV ==="production"){
 //     allowedHeaders: ['Content-Type', 'Authorization']  // Optionally restrict the allowed headers
 // }));
 
-const cors = require('cors');
 app.use(cors());
 
 app.use(express.json());
