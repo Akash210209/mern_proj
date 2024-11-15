@@ -1,21 +1,12 @@
-import express from 'express';
-import Products from '../models/products.js';
-import mongoose from 'mongoose';
-import multer from 'multer';
-import {
-    createProduct,
-    deleteProduct,
-    getAllProducts,
-    updateProduct,
-    uploadProductImage
-  } from '../controller/product.controller.js';
+import express from "express";
+
+import { createProduct, deleteProduct, getProducts, updateProduct } from "../controllers/product.controller.js";
+
 const router = express.Router();
 
+router.get("/", getProducts);
+router.post("/", createProduct);
+router.put("/:id", updateProduct);
+router.delete("/:id", deleteProduct);
 
-router.post("/", multer().single('image'), uploadProductImage);
-router.get("/", getAllProducts)
-router.post("/", createProduct)
-router.delete("/:id", deleteProduct)
-router.put("/:id", updateProduct)
-
-export default router
+export default router;
